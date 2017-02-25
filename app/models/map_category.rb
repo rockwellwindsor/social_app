@@ -1,0 +1,2 @@
+class MapCategory < ApplicationRecord
+end

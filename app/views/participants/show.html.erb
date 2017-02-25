@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Discussion:</strong>
+  <%= @participant.discussion %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @participant.user %>
+</p>
+
+<p>
+  <strong>Last read:</strong>
+  <%= @participant.last_read %>
+</p>
+
+<p>
+  <strong>Window state:</strong>
+  <%= @participant.window_state %>
+</p>
+
+<p>
+  <strong>Active:</strong>
+  <%= @participant.active %>
+</p>
+
+<%= link_to 'Edit', edit_participant_path(@participant) %> |
+<%= link_to 'Back', participants_path %>

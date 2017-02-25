@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Tile:</strong>
+  <%= @map_tiles_subscription.tile %>
+</p>
+
+<p>
+  <strong>Map:</strong>
+  <%= @map_tiles_subscription.map %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @map_tiles_subscription.user %>
+</p>
+
+<p>
+  <strong>Completed:</strong>
+  <%= @map_tiles_subscription.completed %>
+</p>
+
+<p>
+  <strong>Active:</strong>
+  <%= @map_tiles_subscription.active %>
+</p>
+
+<p>
+  <strong>Locked:</strong>
+  <%= @map_tiles_subscription.locked %>
+</p>
+
+<p>
+  <strong>Status:</strong>
+  <%= @map_tiles_subscription.status %>
+</p>
+
+<%= link_to 'Edit', edit_map_tiles_subscription_path(@map_tiles_subscription) %> |
+<%= link_to 'Back', map_tiles_subscriptions_path %>

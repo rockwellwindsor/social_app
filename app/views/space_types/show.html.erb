@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @space_type.title %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @space_type.description %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @space_type.user %>
+</p>
+
+<p>
+  <strong>Icon:</strong>
+  <%= @space_type.icon %>
+</p>
+
+<%= link_to 'Edit', edit_space_type_path(@space_type) %> |
+<%= link_to 'Back', space_types_path %>

@@ -1,0 +1,72 @@
+<%= form_for(map_tile) do |f| %>
+  <% if map_tile.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(map_tile.errors.count, "error") %> prohibited this map_tile from being saved:</h2>
+
+      <ul>
+      <% map_tile.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :title %>
+    <%= f.text_field :title %>
+  </div>
+
+  <div class="field">
+    <%= f.label :description %>
+    <%= f.text_area :description %>
+  </div>
+
+  <div class="field">
+    <%= f.label :icon %>
+    <%= f.text_field :icon %>
+  </div>
+
+  <div class="field">
+    <%= f.label :active %>
+    <%= f.check_box :active %>
+  </div>
+
+  <div class="field">
+    <%= f.label :map_id %>
+    <%= f.text_field :map_id %>
+  </div>
+
+  <div class="field">
+    <%= f.label :parent_tile_id %>
+    <%= f.number_field :parent_tile_id %>
+  </div>
+
+  <div class="field">
+    <%= f.label :shared %>
+    <%= f.check_box :shared %>
+  </div>
+
+  <div class="field">
+    <%= f.label :locked %>
+    <%= f.check_box :locked %>
+  </div>
+
+  <div class="field">
+    <%= f.label :color %>
+    <%= f.text_field :color %>
+  </div>
+
+  <div class="field">
+    <%= f.label :map_category_id %>
+    <%= f.text_field :map_category_id %>
+  </div>
+
+  <div class="field">
+    <%= f.label :user_id %>
+    <%= f.text_field :user_id %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

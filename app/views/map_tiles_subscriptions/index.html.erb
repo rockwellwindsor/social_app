@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Map Tiles Subscriptions</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Tile</th>
+      <th>Map</th>
+      <th>User</th>
+      <th>Completed</th>
+      <th>Active</th>
+      <th>Locked</th>
+      <th>Status</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @map_tiles_subscriptions.each do |map_tiles_subscription| %>
+      <tr>
+        <td><%= map_tiles_subscription.tile %></td>
+        <td><%= map_tiles_subscription.map %></td>
+        <td><%= map_tiles_subscription.user %></td>
+        <td><%= map_tiles_subscription.completed %></td>
+        <td><%= map_tiles_subscription.active %></td>
+        <td><%= map_tiles_subscription.locked %></td>
+        <td><%= map_tiles_subscription.status %></td>
+        <td><%= link_to 'Show', map_tiles_subscription %></td>
+        <td><%= link_to 'Edit', edit_map_tiles_subscription_path(map_tiles_subscription) %></td>
+        <td><%= link_to 'Destroy', map_tiles_subscription, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Map Tiles Subscription', new_map_tiles_subscription_path %>

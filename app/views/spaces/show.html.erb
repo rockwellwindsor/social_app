@@ -1,0 +1,44 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>User:</strong>
+  <%= @space.user %>
+</p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @space.title %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @space.description %>
+</p>
+
+<p>
+  <strong>Space type:</strong>
+  <%= @space.space_type %>
+</p>
+
+<p>
+  <strong>Icon:</strong>
+  <%= @space.icon %>
+</p>
+
+<p>
+  <strong>Ispublic:</strong>
+  <%= @space.isPublic %>
+</p>
+
+<p>
+  <strong>Isprivate:</strong>
+  <%= @space.isPrivate %>
+</p>
+
+<p>
+  <strong>Active:</strong>
+  <%= @space.active %>
+</p>
+
+<%= link_to 'Edit', edit_space_path(@space) %> |
+<%= link_to 'Back', spaces_path %>

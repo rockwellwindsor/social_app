@@ -1,0 +1,47 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Map Tiles</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Description</th>
+      <th>Icon</th>
+      <th>Active</th>
+      <th>Map</th>
+      <th>Parent tile</th>
+      <th>Shared</th>
+      <th>Locked</th>
+      <th>Color</th>
+      <th>Map category</th>
+      <th>User</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @map_tiles.each do |map_tile| %>
+      <tr>
+        <td><%= map_tile.title %></td>
+        <td><%= map_tile.description %></td>
+        <td><%= map_tile.icon %></td>
+        <td><%= map_tile.active %></td>
+        <td><%= map_tile.map %></td>
+        <td><%= map_tile.parent_tile_id %></td>
+        <td><%= map_tile.shared %></td>
+        <td><%= map_tile.locked %></td>
+        <td><%= map_tile.color %></td>
+        <td><%= map_tile.map_category %></td>
+        <td><%= map_tile.user %></td>
+        <td><%= link_to 'Show', map_tile %></td>
+        <td><%= link_to 'Edit', edit_map_tile_path(map_tile) %></td>
+        <td><%= link_to 'Destroy', map_tile, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Map Tile', new_map_tile_path %>

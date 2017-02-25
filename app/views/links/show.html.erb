@@ -1,0 +1,44 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @link.title %>
+</p>
+
+<p>
+  <strong>Url:</strong>
+  <%= @link.url %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @link.user %>
+</p>
+
+<p>
+  <strong>Active:</strong>
+  <%= @link.active %>
+</p>
+
+<p>
+  <strong>Table name:</strong>
+  <%= @link.table_name %>
+</p>
+
+<p>
+  <strong>Table:</strong>
+  <%= @link.table_id %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @link.description %>
+</p>
+
+<p>
+  <strong>Thumbnail:</strong>
+  <%= @link.thumbnail %>
+</p>
+
+<%= link_to 'Edit', edit_link_path(@link) %> |
+<%= link_to 'Back', links_path %>

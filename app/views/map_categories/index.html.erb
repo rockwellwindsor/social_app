@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Map Categories</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Color</th>
+      <th>Icon</th>
+      <th>Active</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @map_categories.each do |map_category| %>
+      <tr>
+        <td><%= map_category.title %></td>
+        <td><%= map_category.color %></td>
+        <td><%= map_category.icon %></td>
+        <td><%= map_category.active %></td>
+        <td><%= link_to 'Show', map_category %></td>
+        <td><%= link_to 'Edit', edit_map_category_path(map_category) %></td>
+        <td><%= link_to 'Destroy', map_category, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Map Category', new_map_category_path %>

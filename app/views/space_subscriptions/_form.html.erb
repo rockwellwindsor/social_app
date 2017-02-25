@@ -1,0 +1,32 @@
+<%= form_for(space_subscription) do |f| %>
+  <% if space_subscription.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(space_subscription.errors.count, "error") %> prohibited this space_subscription from being saved:</h2>
+
+      <ul>
+      <% space_subscription.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :user_id %>
+    <%= f.text_field :user_id %>
+  </div>
+
+  <div class="field">
+    <%= f.label :spaces_id %>
+    <%= f.text_field :spaces_id %>
+  </div>
+
+  <div class="field">
+    <%= f.label :status %>
+    <%= f.number_field :status %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

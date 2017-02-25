@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>User:</strong>
+  <%= @space_subscription.user %>
+</p>
+
+<p>
+  <strong>Spaces:</strong>
+  <%= @space_subscription.spaces %>
+</p>
+
+<p>
+  <strong>Status:</strong>
+  <%= @space_subscription.status %>
+</p>
+
+<%= link_to 'Edit', edit_space_subscription_path(@space_subscription) %> |
+<%= link_to 'Back', space_subscriptions_path %>

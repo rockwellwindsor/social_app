@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Mentions</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>User</th>
+      <th>Mentioned user name</th>
+      <th>Title</th>
+      <th>Mentioned user</th>
+      <th>Table name</th>
+      <th>Table</th>
+      <th>Active</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @mentions.each do |mention| %>
+      <tr>
+        <td><%= mention.user %></td>
+        <td><%= mention.mentioned_user_name %></td>
+        <td><%= mention.title %></td>
+        <td><%= mention.mentioned_user_id %></td>
+        <td><%= mention.table_name %></td>
+        <td><%= mention.table_id %></td>
+        <td><%= mention.active %></td>
+        <td><%= link_to 'Show', mention %></td>
+        <td><%= link_to 'Edit', edit_mention_path(mention) %></td>
+        <td><%= link_to 'Destroy', mention, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Mention', new_mention_path %>

@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @map_category.title %>
+</p>
+
+<p>
+  <strong>Color:</strong>
+  <%= @map_category.color %>
+</p>
+
+<p>
+  <strong>Icon:</strong>
+  <%= @map_category.icon %>
+</p>
+
+<p>
+  <strong>Active:</strong>
+  <%= @map_category.active %>
+</p>
+
+<%= link_to 'Edit', edit_map_category_path(@map_category) %> |
+<%= link_to 'Back', map_categories_path %>

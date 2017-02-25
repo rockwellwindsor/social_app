@@ -1,0 +1,59 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @map_tile.title %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @map_tile.description %>
+</p>
+
+<p>
+  <strong>Icon:</strong>
+  <%= @map_tile.icon %>
+</p>
+
+<p>
+  <strong>Active:</strong>
+  <%= @map_tile.active %>
+</p>
+
+<p>
+  <strong>Map:</strong>
+  <%= @map_tile.map %>
+</p>
+
+<p>
+  <strong>Parent tile:</strong>
+  <%= @map_tile.parent_tile_id %>
+</p>
+
+<p>
+  <strong>Shared:</strong>
+  <%= @map_tile.shared %>
+</p>
+
+<p>
+  <strong>Locked:</strong>
+  <%= @map_tile.locked %>
+</p>
+
+<p>
+  <strong>Color:</strong>
+  <%= @map_tile.color %>
+</p>
+
+<p>
+  <strong>Map category:</strong>
+  <%= @map_tile.map_category %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @map_tile.user %>
+</p>
+
+<%= link_to 'Edit', edit_map_tile_path(@map_tile) %> |
+<%= link_to 'Back', map_tiles_path %>
