@@ -1,0 +1,499 @@
+
+.tilehighlight {
+  border: 2px solid #ff0000;
+  border-radius: 5px;
+}
+
+.jmName {
+
+  padding: 20px 20px 20px 20px;
+  min-height: 95px;
+  margin: 0 25px 25px 0;
+  background-color:#fff;
+  box-shadow: 0 0 45px rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+
+  i {
+    height: 60px;
+    padding-top: 15px;
+    display: block;
+    background: #9b59b6;
+    border-radius: 0 0 2px 2px;
+    color: #fff;
+    font-size: 2em;
+    text-align: center;
+  }
+}
+
+.journeyMapTitle {
+  width:100%;
+  margin-top:7px;
+  padding: 2px 0 8px 0;
+  display: inline-block;
+  color: #4b4b4b;
+  font-size: 1.4em;
+  font-weight: 400;
+  line-height: 1em;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+
+.jmCreatedOn {
+  color: #aaa;
+}
+
+.highlightDiv {
+  min-height: 100px;
+  margin: 0 0 25px 0;
+  padding: 10px 10px 10px 16px;
+  background-color:#fff;
+  box-shadow: 0 0 45px rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+}
+
+.jmCategoryBox {
+  width: 87%;
+  min-height: 115px;
+  padding: 15px 20px 20px 20px;
+  background-color: #fff;
+  box-shadow: 0 0 45px rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+  .catTitle {
+    font-size: 15px;
+    color: #ccc;
+    text-align: center;
+    height: 50px;
+  }
+}
+
+.jmCategoryBoxTiles {
+  margin-bottom:5px;
+}
+
+.tileEditButton {
+  background-color: #EC6C5D;
+  width: auto;
+  margin: 0 10px 0 0;
+  float:right;
+  color: #fff !important;
+}
+.tileEditBackButton {
+  background-color: #ccc;
+  width: auto;
+  margin: 0 10px 0 0;
+  float:right;
+  color: #000 !important;
+}
+
+#jm-wrapper {
+  margin:40px auto 40px auto;
+  padding:0;
+  width:576px;
+}
+
+.select2-container .select2-selection--multiple {
+  width: 100%!important;
+  margin-bottom: 35px;
+}
+.journeyMapEdit {
+  i {
+    height: 60px;
+    padding-top: 10px;
+    display: block;
+    background: #fff; 
+    border-radius: 0 0 2px 2px;
+    color: #35a6d8;
+    font-size: 1em;
+    text-align: center;
+  }
+/*  position: absolute;
+  top: 12px;
+  right: 25px;*/
+}
+.jm-col {
+  width: 55px;
+  margin:-1px 0 0 -15px;
+  float:left;
+
+}
+
+.jm-col.first {
+  margin-left:0px !important;
+}
+
+.jm-col.offset {
+  margin:23px 0 0 -15px;
+}
+
+.jm-cell {
+  width:55px;
+  height:48px;
+  background: url(/img/jm/jm-comb.png);
+  background-repeat: no-repeat;
+//   background-size: cover;
+//   margin-top:-1px;
+}
+.jm-cell.off {
+  background:none;
+}
+
+.jm-cell img.off {
+  opacity:0.25;
+}
+
+.jm-cell.inProgress {
+  opacity: 0.4;
+}
+
+a.jmpopup:active,a.jmpopup:focus,a.jmpopup:hover,a.jmpopup:visited {
+  border:0px;
+  outline-style: none;
+  outline-width: 0;
+}
+.select2-container--default .select2-selection--multiple .select2-selection__choice {
+  width: auto!important;
+}
+.tile {
+  text-align: center;
+
+  a.jmpopup {
+    display: table!important;
+    vertical-align: middle;
+    color: #efefef;
+    font-size: 1.5em;
+    text-decoration: none;
+    position: relative;
+
+    i {
+      display: table-cell;
+      vertical-align: middle;
+      // position: relative;
+      //
+      // &:after {
+      //   content: "";
+      //   position: absolute;
+      //   width: 0;
+      // 	height: 0;
+      // 	border-left: 6px solid transparent;
+      // 	border-right: 7px solid transparent;
+      // 	border-top: 12px solid rgba(0,0,0,0.5);
+      //   left: 50%;
+      //   bottom: 1px;
+      //   transform: translateX(-50%);
+      // }
+    }
+    // &:before {
+    //   content: "";
+    //   height: 25%;
+    //   width: 14px;
+    //   background: rgba(0,0,0,0.5);
+    //   position: absolute;
+    //   right: 11px;
+    //   bottom: 1px;
+    //   transform: skewX(-30deg);
+    // }
+    // &:after {
+    //   content: "";
+    //   height: 25%;
+    //   width: 14px;
+    //   background: rgba(0,0,0,0.5);
+    //   position: absolute;
+    //   left: 11px;
+    //   bottom: 1px;
+    //   transform: skewX(30deg);
+    // }
+  }
+}
+.iconpick {
+  display: table;
+  float: left;
+  padding: 5px;
+  text-align: center;
+
+  i {
+    height: 45px;
+    width: 45px;
+    display: table-cell;
+    border: 1px solid #fff;
+    border-radius: 4px;
+    font-size: 2em;
+    vertical-align: middle;
+    transition: ease all 0.2s;
+
+    &:hover {
+      border: 1px solid #5897fb;
+      cursor: pointer;
+      transition: ease all 0.2s;
+    }
+  }
+}
+.popover-title > div > div {
+  height: 48px;
+  width: 55px;
+  display: table;
+  text-align: center;
+
+  i {
+    display: table-cell;
+    color: #fff;
+    font-size: 1.2em;
+    vertical-align: middle;
+  }
+}
+
+.btnsave {
+  padding: 15px 35px;
+  margin-left: 0;
+  float: right;
+  background-color: #3498db!important;
+  border: 1px solid #2980b9;
+  border-radius: 4px;
+  box-shadow: none;
+  box-sizing: border-box;
+  color: #fff;
+
+  &:hover {
+    background: #308cc8!important;
+  }
+}
+
+.mainone:focus {
+  outline: none;
+}
+
+
+.mainone {
+  padding: 0 15px;
+  background: #fff;
+  margin-bottom:50px;
+  .title {
+    text-decoration: underline;
+    text-align: center;
+    padding: 15px 15px; 
+    font-size: 1.4em;
+    font-weight: 400;
+  }
+  .formout {
+    padding: 15px;
+
+    .form-group {
+      margin-bottom: 35px;
+
+      label {
+        font-size: 1.2em;
+      }
+    }
+  }
+}
+
+/* TIE CREATION FORM */
+
+#journeymapTileCreationWrapper {
+  outline: none;
+}
+
+a.tiledep {
+  height:108px;
+  padding: 0;
+  margin: 0;
+
+  .tileCatAll {
+    height: calc(100% - 5px);
+    width: calc(100% - 5px);
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+
+    &:hover {
+      border:1px solid #5897fb;
+    }
+  }
+}
+
+.tileCatLi {
+  list-style: none;
+  margin-bottom: 5px;
+  height:50px;
+  text-align:center;
+  color:#fff
+}
+
+.tileCatLi i {
+  margin: 16px 0 0 0;
+}
+
+#newTileIconField {
+  display: none;
+}
+
+.newTileIcons {
+  max-height: 255px;
+  padding: 10px;
+  border: 1px solid #d4d4d4;
+  border-radius: 5px;
+  box-sizing: border-box;
+  overflow: scroll;
+}
+
+#tileTypeLabel {
+  display: none;
+}
+
+#categorySelectList {
+  border: 1px solid #d4d4d4;
+  border-radius: 4px;
+  padding: 10px 10px 5px 10px;
+  margin: 0px;
+  display: none;
+}
+
+#categorySelectList span {
+  white-space: normal;
+  line-height: 1em;
+}
+
+.tiletype {
+  min-height:88px;
+  margin-bottom:5px;
+  float:left;
+  padding-right: 5px;
+  padding-left: 0;
+
+  .tilein {
+    height: 100%;
+    width: 100%;
+    padding: 10px 0px;
+    border:1px solid #fff;
+    border-radius: 4px;
+  }
+/*    &:hover .tilein {
+    border: 1px solid #5897fb;
+  }*/
+}
+
+#newTileParentTileField {
+  padding: 0px;
+}
+
+#newTileJmSelectField {
+  display: none;
+}
+
+#newTileShareField {
+  display: none;
+}
+
+.createTileHexWrapper {
+  margin-bottom:20px;
+  margin-left:25px;
+}
+
+.newTileCTA {
+  color:#aaa;
+  margin-top:5px;
+}
+/*.highlightDiv {
+  padding: 10px;
+  position: absolute;
+  top: 85px;
+  left: 5px;
+}*/
+.hex {
+/*  margin-left:35px;
+  margin-right: 50px;
+  margin-bottom: 25px;
+  position: relative;
+  right: 5px;*/
+}
+.hex i {
+  position: absolute;
+  color: #fff;
+  font-size: 1.1em;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.hexagon {
+  position: relative;
+  width: 40px;
+  height: 23.09px;
+  background-color: #5897fb;
+  margin: 11.55px 0;
+  transform: rotate(90deg);
+}
+.select2-container {
+    width:100% !important;
+}
+
+.hexagon:before,
+.hexagon:after {
+  content: "";
+  position: absolute;
+  width: 0;
+  border-left: 20px solid transparent;
+  border-right: 20px solid transparent;
+}
+
+.hexagon:before {
+  bottom: 100%;
+  border-bottom: 11.55px solid #5897fb;
+}
+
+.hexagon:after {
+  top: 100%;
+  width: 0;
+  border-top: 11.55px solid #5897fb;
+}
+/* END TILE CREATION FORM */
+.tileShareDiv {
+ padding: 10px 0 10px 15px;
+}
+.tileShareText {
+  margin: 0 0 0 5px;
+}
+.tileDeleteSection{
+  padding: 10px 10px 10px 15px;
+  border-top: 1px solid #d4d4d4;
+}
+.tileChallenger {
+  font-size: 25px;
+  color: #5897fb;
+}
+.challengedTileShow{
+  text-align: left;
+  font-size: 15px;
+  margin: 15px 15px;
+  height:48px;
+  width:55px;
+}
+
+#newTileParentTileField{
+  display: none;
+}
+
+.selectedType {
+  .tileCatAll {
+    border:2px solid rgb(88, 151, 251) !important;
+    margin-bottom:0px;
+  }
+}
+
+.selectedIcon {
+    .fa {
+    border: 1px solid #5897fb !important;
+    border-radius: 4px;
+  }
+}
+
+.selectedParentTile {
+  .tilein {
+    border:2px solid rgb(88, 151, 251) !important;  
+  }
+}
+
+.tileDescription {
+  font-size:11px;
+  margin-bottom: 5px;
+}
+
+

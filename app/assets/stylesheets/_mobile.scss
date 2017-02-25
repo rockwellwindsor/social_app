@@ -1,0 +1,80 @@
+
+
+/* START MOBILE MENU STYLES */
+
+.nav-trigger {
+  display: none;
+  float: left;
+  margin:-8px 10px 0 -5px;
+  font-size: 55px;
+  line-height: 38px;
+  color: #797678;
+  font-family: 'ProximaNova-Regular','Helvetica';
+  text-decoration:none;  
+}
+
+
+.mobile-menu {
+  display: none;
+  position: absolute;
+  position: fixed;
+  top: 0;
+  height: 100%;
+  z-index: 999999;
+  width: 260px;
+  overflow-x: none;
+  overflow-y: auto;
+  font-size: 14px;
+  background: #f8f8f8;
+  color: #333;
+  -webkit-box-shadow: inset 0 0 5px 5px #ebebeb;
+  -moz-box-shadow: inset 0 0 5px 5px #ebebeb;
+  box-shadow: inset 0 0 5px 5px #ebebeb;
+}
+
+.mobile-menu.right {
+  left: -260px;
+  right: auto;
+}
+
+.mobile-menu  ul li {
+  display: block;
+  margin: 0;
+  line-height: 48px;
+  border-top: 1px solid white;
+  border-bottom: 1px solid #dfdfdf;
+}
+
+.mobile-menu ul {
+  display: block;
+  margin: 0 0 15px;
+  padding: 0;
+  border-top: 1px solid #dfdfdf;
+  border-bottom: 1px solid white;
+}
+
+.mobile-menu ul li a {
+  padding: 0 15px;
+  display: block;
+  text-decoration: none;
+  color: #333;
+}
+
+
+.mobile-menu ul li a:hover {
+  color: #CCC;
+}
+
+
+.mobile-menu ul li:hover{
+  border-top: 1px solid transparent;
+}
+
+.mobile-menu ul li:hover > a {
+  -webkit-box-shadow: inset 0 0 15px 3px #ebebeb;
+  -moz-box-shadow: inset 0 0 15px 3px #ebebeb;
+  box-shadow: inset 0 0 15px 3px #ebebeb;
+}
+
+/* END MOBILE MENU STYLES */
+

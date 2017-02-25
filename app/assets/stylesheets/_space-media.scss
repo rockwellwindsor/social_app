@@ -1,0 +1,396 @@
+// styles specific to media space
+.media {
+  overflow: visible!important;
+}
+.media-author {
+  padding: 10px !important;
+
+  .post-avatar {
+    float: left;
+  }
+
+  .media-post-byline {
+    float: left;
+    line-height: 24px;
+  }
+}
+
+// spaces styles
+.spacecreate {
+  margin-top: 25px;
+}
+.space .feed-header i {
+  padding: 10px 15px;
+  float: left;
+  color: #ccc;
+  font-size: 2em;
+  text-align: center;
+}
+
+.btn-savespace {
+  padding: 5px 35px!important;
+  margin-top: 25px;
+  background: #5cb85c!important;
+  border: 1px solid #4cae4c;
+  border-radius:4px;
+  box-shadow: none;
+  color: #fff;
+  transition: ease all 0.3s;
+
+  &:hover {
+    background: #449d44!important;
+    border: 1px solid #398439;
+    color: #fff;
+    box-shadow: none;
+    transition: ease all 0.3s;
+  }
+}
+
+// underline and placeholder move and input
+.space .group {
+  position:relative;
+	width: 100%;
+	margin: 0 auto;
+  margin-bottom: 25px;
+}
+.space input.input {
+	display:block;
+	width:100%;
+  height: auto!important;
+  margin-bottom: 0;
+  padding:10px 10px 10px 25px;
+	background: rgba(239,239,239,0.15);
+  border:none;
+  border-bottom:1px solid rgba(200,200,200,0.8);
+	border-radius: 1px;
+  box-shadow: none!important;
+	color: #333;
+  font-size:18px;
+}
+input.input:focus {
+	 outline:none;
+ }
+
+/* LABEL ======================================= */
+label.browlabel, i.browsearch {
+  color: rgba(200,200,200,1);
+  font-size:18px;
+  font-weight:300;
+  position:absolute;
+  pointer-events:none;
+  left:5px;
+  top:10px;
+  transition:0.2s ease all;
+  -moz-transition:0.2s ease all;
+  -webkit-transition:0.2s ease all;
+}
+i.browsearch {
+  color: rgba(200,200,200,0.8);
+  left:200px;
+  top:10px;
+}
+/* Change the yellow to any color ;) */
+.space input:-webkit-autofill,
+.space input:-webkit-autofill:hover,
+.space input:-webkit-autofill:focus,
+.space input:-webkit-autofill:active {
+    transition: background-color 5000s ease-in-out 0s;
+		-webkit-text-fill-color: #efefef !important;
+}
+
+/* active state */
+.space input.input:focus ~ i.browsearch, .space input.input:valid ~ i.browsearch, i.browsearch.has-value {
+  left: 0px;
+  top: 11px;
+  font-size:16px;
+  color:#2d8ddb;
+}
+.space input.input:focus ~ label.browlabel, .space input.input:valid ~ label.browlabel, label.browlabel.has-value {
+  top:-15px;
+  font-size:14px;
+  color:#2d8ddb;
+}
+
+/* BOTTOM BARS ================================= */
+.space .bar 	{ position:relative; display:block; width:100%; }
+.space .bar:before, .space .bar:after 	{
+  content:'';
+  height:3px;
+  width:0;
+  bottom:0px;
+  position:absolute;
+  background:#2d8ddb;
+  transition:0.2s ease all;
+  -moz-transition:0.2s ease all;
+  -webkit-transition:0.2s ease all;
+}
+.space .bar:before {
+  left:50%;
+}
+.space .bar:after {
+  right:50%;
+}
+
+/* active state */
+.space input.input:focus ~ .bar:before, .space input.input:focus ~ .bar:after {
+  width:50%;
+}
+
+/* HIGHLIGHTER ================================== */
+.space .highlight {
+  position:absolute;
+  height:60%;
+  width:100px;
+  top:25%;
+  left:0;
+  pointer-events:none;
+  opacity:0.5;
+}
+
+/* active state */
+.space input.input:focus ~ .highlight {
+  -webkit-animation:inputHighlighter 0.3s ease;
+  -moz-animation:inputHighlighter 0.3s ease;
+  animation:inputHighlighter 0.3s ease;
+}
+
+/* ANIMATIONS ================ */
+@-webkit-keyframes inputHighlighter {
+	from { background:#2d8ddb; }
+  to 	{ width:0; background:transparent; }
+}
+@-moz-keyframes inputHighlighter {
+	from { background:#2d8ddb; }
+  to 	{ width:0; background:transparent; }
+}
+@keyframes inputHighlighter {
+	from { background:#2d8ddb; }
+  to 	{ width:0; background:transparent; }
+}
+
+// space results
+.spacecontainer {
+  margin-left: -15px;
+
+  h2 {
+    float: left;
+    margin: 15px 10px;
+    color: #555;
+    font-size: 1.6em;
+    font-weight: 100;
+  }
+  .updatelist {
+    float: right;
+    margin-top: 10px;
+    padding: 8px 10px;
+    background: #fff;
+    border: 2px solid #2d8ddb;
+    border-radius: 2px;
+    color: #2d8ddb;
+    font-size: 1.0em;
+    font-weight: 300;
+    transition: ease all 0.3s;
+
+    &:hover {
+      background: #2d8ddb;
+      border: 2px solid #2d8ddb;
+      border-radius: 2px;
+      color: #fff;
+      transition: ease all 0.3s;
+    }
+    &:focus {
+      outline: none!important;
+    }
+  }
+  hr {
+    height: 1px;
+    width: 100%;
+    margin-bottom: 15px;
+    background: #efefef;
+  }
+  .spaceNavListing {
+
+    .hideit {
+      width: 0!important;
+      opacity: 0!important;
+      transition: ease all 0.3s;
+    }
+    .changeit {
+      width: auto!important;
+      margin-left: 5px!important;
+      transition: ease all 0.3s;
+    }
+    .badge {
+      width:100%;
+      padding: 0px;
+      background: #efefef;
+      border: 1px solid #dfdfdf;
+      border-radius: 4px;
+      box-sizing: border-box;
+      overflow: hidden;
+      transition: ease all 0.3s;
+
+      &:hover {
+        background: #e6e6e6;
+      }
+      .checkbox {
+        height: 34px;
+        width: 32px;
+        float: left;
+        margin: 0;
+        background: #efefef;
+        border-radius: 4px 0 0 4px;
+        border-right: 1px solid #fff;
+        box-shadow: none;
+        box-sizing: border-box;
+        opacity: 1;
+        transition: ease all 0.3s;
+
+        .addspace {
+          margin-top: 4px;
+          margin-left: -10px;
+          }
+        }
+       .spaceitem {
+         display: block;
+         height: 34px;
+         width: 207px;
+         margin: 0px;
+         margin-left: 32px;
+         padding: 0px;
+         opacity: 1;
+         transition: ease all 0.3s;
+
+         img {
+           width: 22px;
+           height: 22px;
+           float:left;
+           margin: 6px 0 6px 5px;
+         }
+         h3 {
+           margin-top: 9px;
+           float:left;
+           color: #888;
+           font-size:14px;
+         }
+       }
+     }
+  }
+  .paginate {
+    text-align: center;
+
+    ul.pagination {
+
+      li a{
+        color: #888;
+        opacity: 1;
+        transition: ease all 0.3s;
+
+        &:hover {
+          opacity: 0.7;
+          transition: ease all 0.3s;
+        }
+      }
+      li.disabled {
+        opacity: 0.4;
+      }
+      li.active span {
+        color: #2D8DDB;
+      }
+    }
+  }
+}
+
+//checkbox
+.spacecontainer .checkbox {
+	padding-left: 0px;
+	text-align: center;
+  position: relative;
+  z-index: 1000;
+}
+.spacecontainer input[type=checkbox]:not(old) {
+  width: 2em;
+  height: 2em;
+  margin: 0;
+  padding: 0;
+  font-size: 1em;
+  opacity: 0;
+}
+.spacecontainer input[type=checkbox]:not(old) + label.spacelabel {
+  display: inline-block;
+  margin-left: -22px;
+  line-height: 24px;
+	color: #aaa;
+  transition: ease all 0.3s;
+}
+.spacecontainer input[type=checkbox]:not(old) + label.spacelabel > span {
+  display: inline-block;
+  width: 15px;
+  height: 15px;
+  margin: 0;
+  border: 1px solid rgb(192,192,192);
+  border-radius: 4px;
+  background: rgb(240,240,240);
+  vertical-align: bottom;
+  transition: ease all 0.2s;
+
+  &:hover {
+    background: #fff!important;
+    transition: ease all 0.2s;
+  }
+}
+.spacecontainer input[type=checkbox]:not(old):checked + label.spacelabel > span {
+  background: #2D8DDB;
+  transition: ease all 0.2s;
+}
+.spacecontainer input[type=checkbox]:not(old):checked + label.spacelabel > span:before{
+  content: '✓';
+  display: block;
+  width: 1em;
+  color: rgb(255,255,255);
+  font-size: 0.8em;
+  line-height: 1.4em;
+  text-align: center;
+  font-weight: bold;
+  transition: ease all 0.3s;
+}
+.editform {
+
+  .edit {
+    margin-bottom: 20px;
+
+    .feed-header-icon i {
+      color: #ccc;
+      font-size: 2em;
+      position: relative;
+      top: 10px;
+    }
+    h1 {
+
+      .spacename {
+        width: calc(100% - 105px);
+        margin-left: 10px;
+        display: inline-block;
+        font-size: 0.8em;
+        line-height: 1em;
+        vertical-align: top;
+        opacity: 0.6;
+      }
+    }
+  }
+  .special {
+    margin: 25px;
+  }
+  .button-save {
+    padding: 5px 35px;
+    background: #5cb85c;
+    border: 1px solid #4cae4c;
+    color: #fff;
+  }
+  .button-delete {
+    padding: 5px 35px;
+    background: #d9534f;
+    border: 1px solid #d43f3a;
+    color: #fff;
+  }
+}

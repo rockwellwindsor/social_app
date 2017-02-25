@@ -1,0 +1,252 @@
+// override main styles
+.login input {
+	box-shadow: 0 0 0 rgba(0, 0, 0, 0);
+	height: auto!important;
+	margin-bottom: 0;
+	line-height: normal;
+	border-radius: 0;
+}
+
+//login
+.login, .login form {
+	height: 100%;
+	min-height: 600px;
+	position: relative;
+
+	.alert {
+		width: 100%;
+		margin-bottom: 0px;
+		padding: 10px 15px;
+		border-radius: 1px;
+		line-height: 2em;
+		position: absolute;
+		bottom: 0;
+	}
+	h1 {
+		margin: 45px;
+		color: #efefef;
+		font-size: 3.5em;
+		font-weight: 100;
+		text-align: center;
+	}
+}
+.tophalf {
+	position: relative;
+	height: 66.6666%;
+	background: #3D424E;
+  // background: -webkit-linear-gradient(115deg, #0F5BA6 0%, #70D4ED 100%); /* Chrome 10+, Saf5.1+ */
+  // background:    -moz-linear-gradient(115deg, #0F5BA6 0%, #70D4ED 100%); /* FF3.6+ */
+  // background:     -ms-linear-gradient(115deg, #0F5BA6 0%, #70D4ED 100%); /* IE10 */
+  // background:      -o-linear-gradient(115deg, #0F5BA6 0%, #70D4ED 100%); /* Opera 11.10+ */
+  // background:         linear-gradient(115deg, #0F5BA6 0%, #70D4ED 100%); /* W3C */
+
+	.topposition {
+		position: absolute;
+		bottom: 35px;
+		left: 50%;
+  	transform: translateX(-50%);
+	}
+}
+.bottomhalf {
+	position: relative;
+	height: 33.3333%;
+	background: #efefef;
+
+		.bottomposition {
+			position: absolute;
+			top: -25px;
+			left: 50%;
+	  	transform: translateX(-50%);
+		}
+}
+.loginlogo {
+	width: 300px;
+	display: block;
+	margin: 0 auto 50px auto;
+	-webkit-animation-duration: 1s;
+  -webkit-animation-delay: 0.1s;
+}
+// underline and placeholder move and input
+.login .group, .login .form-group {
+  position:relative;
+	width: 300px;
+	margin: 0 auto;
+  margin-bottom: 25px;
+}
+.login input.input {
+	display:block;
+	width:300px;
+  padding:10px 10px 10px 5px;
+	background: rgba(239,239,239,0.05);
+  border:none;
+  border-bottom:1px solid rgba(239,239,239,0.6);
+	border-radius: 1px;
+	color: #efefef;
+  font-size:18px;
+}
+input.input:focus {
+	 outline:none;
+ }
+
+/* LABEL ======================================= */
+label.loglabel {
+  color: rgba(239,239,239,0.6);
+  font-size:18px;
+  font-weight:300;
+  position:absolute;
+  pointer-events:none;
+  left:5px;
+  top:10px;
+  transition:0.2s ease all;
+  -moz-transition:0.2s ease all;
+  -webkit-transition:0.2s ease all;
+}
+/* Change the yellow to any color ;) */
+.login input:-webkit-autofill,
+.login input:-webkit-autofill:hover,
+.login input:-webkit-autofill:focus,
+.login input:-webkit-autofill:active {
+    transition: background-color 5000s ease-in-out 0s;
+		-webkit-text-fill-color: #efefef !important;
+}
+
+/* active state */
+.login input.input:focus ~ label.loglabel, .login input.input:valid ~ label.loglabel, label.loglabel.has-value {
+  top:-15px;
+  font-size:14px;
+  color:#2d8ddb;
+}
+
+/* BOTTOM BARS ================================= */
+.login .bar 	{ position:relative; display:block; width:300px; }
+.login .bar:before, .login .bar:after 	{
+  content:'';
+  height:3px;
+  width:0;
+  bottom:0px;
+  position:absolute;
+  background:#2d8ddb;
+  transition:0.2s ease all;
+  -moz-transition:0.2s ease all;
+  -webkit-transition:0.2s ease all;
+}
+.login .bar:before {
+  left:50%;
+}
+.login .bar:after {
+  right:50%;
+}
+
+/* active state */
+.login input.input:focus ~ .bar:before, .login input.input:focus ~ .bar:after {
+  width:50%;
+}
+
+/* HIGHLIGHTER ================================== */
+.login .highlight {
+  position:absolute;
+  height:60%;
+  width:100px;
+  top:25%;
+  left:0;
+  pointer-events:none;
+  opacity:0.5;
+}
+
+/* active state */
+.login input.input:focus ~ .highlight {
+  -webkit-animation:inputHighlighter 0.3s ease;
+  -moz-animation:inputHighlighter 0.3s ease;
+  animation:inputHighlighter 0.3s ease;
+}
+
+/* ANIMATIONS ================ */
+@-webkit-keyframes inputHighlighter {
+	from { background:#2d8ddb; }
+  to 	{ width:0; background:transparent; }
+}
+@-moz-keyframes inputHighlighter {
+	from { background:#2d8ddb; }
+  to 	{ width:0; background:transparent; }
+}
+@keyframes inputHighlighter {
+	from { background:#2d8ddb; }
+  to 	{ width:0; background:transparent; }
+}
+
+// button
+.login .loginbutton {
+	width: 100%;
+	padding: 10px 5px;
+	background: #2d8ddb;
+	border: none;
+	border-radius: 2px;
+	color: #efefef;
+	font-size: 1.8em;
+	font-weight: 300;
+	line-height: normal;
+	transition: ease all 0.3s;
+
+	&:hover {
+		background: #1069c1;
+		transition: ease all 0.3s;
+	}
+}
+//checkbox
+.login .checkbox {
+	margin-top: 45px;
+	padding-left: 0px;
+	text-align: center;
+}
+.login input[type=checkbox]:not(old) {
+  width: 2em;
+  margin: 0;
+  padding: 0;
+  font-size: 1em;
+  opacity: 0;
+}
+.login input[type=checkbox]:not(old) + label {
+  display: inline-block;
+  margin-left: -2em;
+  line-height: 1.5em;
+	color: #aaa;
+}
+.login input[type=checkbox]:not(old) + label > span {
+  display: inline-block;
+  width: 15px;
+  height: 15px;
+  margin: 0.25em 0.5em 0.25em 0.25em;
+  border: 1px solid rgb(192,192,192);
+  border-radius: 2px;
+  background: rgb(224,224,224);
+  background-image: linear-gradient(rgb(240,240,240),rgb(224,224,224));
+  vertical-align: bottom;
+}
+.login input[type=checkbox]:not(old):checked + label > span {
+  background-image: linear-gradient(rgb(224,224,224),rgb(240,240,240));
+}
+.login input[type=checkbox]:not(old):checked + label > span:before{
+  content: '✓';
+  display: block;
+  width: 1em;
+  color: rgb(45, 141, 219);
+  font-size: 1em;
+  line-height: 1.1em;
+  text-align: center;
+  text-shadow: 0 0 0.0714em rgb(59, 131, 189);
+  font-weight: bold;
+}
+.login .register {
+	margin-top: 15px;
+	text-align: center;
+}
+.login .register a.regi {
+	border-right: 1.5px solid #aaa;
+}
+
+// styles for animations
+.login .preanimate {
+/*	visibility: hidden;*/
+	opacity: 0;
+	transition: ease all 0.3s;
+}
