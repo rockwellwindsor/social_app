@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170227143814) do
+ActiveRecord::Schema.define(version: 20170227171432) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -251,6 +251,15 @@ ActiveRecord::Schema.define(version: 20170227143814) do
     t.index ["user_id"], name: "index_posts_on_user_id", using: :btree
   end
 
+  create_table "social_links", force: :cascade do |t|
+    t.integer  "user_id"
+    t.string   "title"
+    t.string   "url"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_social_links_on_user_id", using: :btree
+  end
+
   create_table "space_subscriptions", force: :cascade do |t|
     t.integer  "user_id"
     t.integer  "spaces_id"
@@ -349,6 +358,7 @@ ActiveRecord::Schema.define(version: 20170227143814) do
   add_foreign_key "participants", "users"
   add_foreign_key "posts", "spaces"
   add_foreign_key "posts", "users"
+  add_foreign_key "social_links", "users"
   add_foreign_key "space_subscriptions", "spaces", column: "spaces_id"
   add_foreign_key "space_subscriptions", "users"
   add_foreign_key "space_types", "users"

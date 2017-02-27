@@ -5,7 +5,7 @@
         <div class="right col-sm-12 col-md-6">
 
           <div class="photo">
-              <div class="img" style="background:url('')no-repeat center;background-size:cover;"></div>
+              <div class="img hidden" style="background:url('')no-repeat center;background-size:cover;"></div>
               <div id="profile-photo">
                 <div class="nopic" alt="<%= @user.first_name %>">
                   <span class="letter">
@@ -53,57 +53,16 @@
 
             <div class="clearfix"></div>
 
-            @if ($profile->social_twitter)
-              <a href="{{ $profile->social_twitter  }}" target="_blank" class="link">
-                <i class="fa fa-twitter"></i>
-                <span class="info">{{ str_limit($profile->social_twitter, 23)  }}</span>
-              </a>
-            @endif
-
-            <div class="clearfix"></div>
-
-            @if ($profile->social_website)
-              <a href="https://{{ $profile->social_website  }}" target="_blank"  class="link">
-                <i class="fa fa-dribbble"></i>
-                <span class="info">{{ str_limit($profile->social_website, 23)  }}</span>
-              </a>
-            @endif
-
-            <div class="clearfix"></div>
-
-            @if ($profile->social_instagram)
-              <a href="{{ $profile->social_instagram  }}" target="_blank"  class="link">
-                <i class="fa fa-instagram"></i>
-                <span class="info">{{ str_limit($profile->social_instagram, 23)  }}</span>
-              </a>
-            @endif
-
-            <div class="clearfix"></div>
-
-            @if ($profile->social_facebook)
-              <a href="{{ $profile->social_facebook  }}" target="_blank"  class="link">
-                <i class="fa fa-facebook"></i>
-                <span class="info">{{ str_limit($profile->social_facebook, 23)  }}</span>
-              </a>
-            @endif
-
-            <div class="clearfix"></div>
-
-            @if ($profile->social_linkedin)
-              <a href="{{ $profile->social_linkedin  }}" target="_blank"  class="link">
-                <i class="fa fa-linkedin"></i>
-                <span class="info">{{ str_limit($profile->social_linkedin, 23)  }}</span>
-              </a>
-            @endif
-
-            <div class="clearfix"></div>
-
-            @if ($profile->social_skype)
-              <a href="#" class="link">
-                <i class="fa fa-skype"></i>
-                <span class="info">{{ str_limit($profile->social_skype, 23)  }}</span>
-              </a>
-            @endif
+            <% if @user.social_links.any? %>
+              <% @user.social_links.each do | link | %>
+                <a href="<%= link.url %>" target="_blank" class="link">
+                  <i class="fa fa-twitter"></i>
+                  <span class="info"><%= link.title %></span>
+                </a>
+          
+                <div class="clearfix"></div>
+              <% end %>
+            <% end %>
 
             <div class="buttons">
 
