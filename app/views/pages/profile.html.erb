@@ -1,290 +1,253 @@
-    <div class="contain">
-      <div class="content">
-        <div class="profile">
-          <div class="basicinfo row">
-            <div class="right col-sm-12 col-md-6">
+<div class="contain">
+  <div class="content">
+    <div class="profile">
+      <div class="basicinfo row">
+        <div class="right col-sm-12 col-md-6">
 
-              <div class="photo">
+          <div class="photo">
+              <div class="img" style="background:url('')no-repeat center;background-size:cover;"></div>
+              <div id="profile-photo">
+                <div class="nopic" alt="<%= @user.first_name %>">
+                  <span class="letter">
+                    <%= @user.first_name %>
+                  </span>
+                </div>
+              </div>
+          </div>
 
-                @if ($profile->avatar)
+          <div class="names">
+            <span class="name"><%= @user.first_name %> <%= @user.last_name %></span>
+            <span class="title"><%= @user.title %></span>
+            <span class="dept"><%= @user.department %></span>
+          </div>
 
-                  <div class="img" style="background:url('https://{{env('S3_BUCKET_AVATARS')}}.s3.amazonaws.com/{{$profile->avatar}}')no-repeat center;background-size:cover;"></div>
-                  @if ($isMyProfile)
-<!--                     <div class="editimage">
-                      <a href="#">Edit you image</a>
-                    </div> -->
-                  @endif
+          <div class="act row">
+            <div class="stat col-xs-4">
+              <div class="amount pos">
+                <i class="fa fa-thumb-tack"></i>
+                <span class="number">#posts</span>
+              </div>
+            </div>
+            <div class="stat col-xs-4">
+              <div class="amount fav">
+                <i class="fa fa-star"></i>
+                <span class="number">#likes</span>
+              </div>
+            </div>
+            <div class="stat col-xs-4">
+              <div class="amount comm">
+                <i class="fa fa-commenting"></i>
+                <span class="number">#comments</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="left col-sm-12 col-md-6">
+          <div class="about">
+
+            <a href="mailto:<%= @user.email %>" class="link">
+              <i class="fa fa-envelope"></i>
+              <span class="info"><%= @user.email %></span>
+            </a>
+
+            <div class="clearfix"></div>
+
+            @if ($profile->social_twitter)
+              <a href="{{ $profile->social_twitter  }}" target="_blank" class="link">
+                <i class="fa fa-twitter"></i>
+                <span class="info">{{ str_limit($profile->social_twitter, 23)  }}</span>
+              </a>
+            @endif
+
+            <div class="clearfix"></div>
+
+            @if ($profile->social_website)
+              <a href="https://{{ $profile->social_website  }}" target="_blank"  class="link">
+                <i class="fa fa-dribbble"></i>
+                <span class="info">{{ str_limit($profile->social_website, 23)  }}</span>
+              </a>
+            @endif
+
+            <div class="clearfix"></div>
+
+            @if ($profile->social_instagram)
+              <a href="{{ $profile->social_instagram  }}" target="_blank"  class="link">
+                <i class="fa fa-instagram"></i>
+                <span class="info">{{ str_limit($profile->social_instagram, 23)  }}</span>
+              </a>
+            @endif
+
+            <div class="clearfix"></div>
+
+            @if ($profile->social_facebook)
+              <a href="{{ $profile->social_facebook  }}" target="_blank"  class="link">
+                <i class="fa fa-facebook"></i>
+                <span class="info">{{ str_limit($profile->social_facebook, 23)  }}</span>
+              </a>
+            @endif
+
+            <div class="clearfix"></div>
+
+            @if ($profile->social_linkedin)
+              <a href="{{ $profile->social_linkedin  }}" target="_blank"  class="link">
+                <i class="fa fa-linkedin"></i>
+                <span class="info">{{ str_limit($profile->social_linkedin, 23)  }}</span>
+              </a>
+            @endif
+
+            <div class="clearfix"></div>
+
+            @if ($profile->social_skype)
+              <a href="#" class="link">
+                <i class="fa fa-skype"></i>
+                <span class="info">{{ str_limit($profile->social_skype, 23)  }}</span>
+              </a>
+            @endif
+
+            <div class="buttons">
+
+              <a href="mailto:<%= @user.email %>" >
+                <button class="talk topbutton" type="button" name="button"><i class="fa fa-pencil"></i> Message</button>
+              </a>
+
+              <a href="#" class="col3Loader" data-url="/user/<%= @user.id %>/edit %>">
+                <button class="edit topbutton" type="button" name="button"><i class="fa fa-edit"></i>Edit</button>
+              </a>
+
+            </div>
+          </div>
+        </div>
+      </div><!-- basicinfo -->
+
+      <div class="information row">
+        <div class="aboutinfo col-xs-12 col-sm-12 col-md-12 col-lg-8">
+          <div class="row">
+            <div class="about col-xs-12 col-sm-12 col-md-6 col-lg-12">
+              <div class="aboutin">
+                <span class="title">Information</span>
+
+                <p>
+                  <%= @user.biography %>
+                </p>  
+
+                <p>
+                  Hobbies: <%= @user.hobbies %>
+                </p>
+
+              </div>
+            </div>
+            <div class="journeymaps col-xs-12 col-sm-12 col-md-6 col-lg-12">
+              <div class="mapin">
+                <span class="title">#####</span>
+                <div class="maplist row">
+<!--
+                @if(count($usersJourneyMaps) > 0)
+
+                  @foreach ($usersJourneyMaps as $usersJourneyMap)
+
+                    <a href="#" class="map col-xs-6 col-sm-4 col-md-6 col-lg-4 navitem" data-col2-id="/journeymap/" data-col3-id="/journeymap/{{$usersJourneyMap->id}}">
+                      <span class="mapname">{{$usersJourneyMap->name}}</span>
+                      <i class="fa fa-map"></i>
+                    </a>
+
+                  @endforeach
 
                 @else
 
-                  <div id="profile-photo">
-                    <div class="nopic" alt="{!! $profile->name !!}">
-                      <span class="letter">
-                        {{ ucfirst(str_limit($profile->name, 1, $end = '')) }}
+                  @if ($isMyProfile) 
+                    <a href="#" class="map col-xs-6 col-sm-4 col-md-6 col-lg-4 col3Loader" data-url="/journeymap/create">
+                      <span class="nojm">click here to make one.</span>
+                      <span class="mapname" style="border:none;margin-top:20px;"></span>
+                      <i class="fa fa-map" style="background:#ccc;"></i>
+                    </a>
+                  @else
+                    <span class="nomap col-xs-6 col-sm-4 col-md-6 col-lg-4">
+                      <span class="nojm">{{ $profile->name }} has no Journey Maps.</span>
+                      <span class="mapname" style="border:none;margin-top:20px;"></span>
+                      <i class="fa fa-map" style="background:#ccc;"></i>
+                    </span>
+                  @endif
+
+                @endif
+
+                </div>
+              </div>
+            </div>
+          </div>
+        </div><!-- aboutinfo -->
+
+<!--
+        <div class="actinfo col-xs-12 col-sm-12 col-md-12 col-lg-4">
+          <div class="row">
+            <div class="spaces col-xs-12 col-sm-12 col-md-6 col-lg-12">
+              <div class="spacein">
+              <span class="title">Spaces</span>
+                <div class="spacelist row">
+
+                  @if (count($profileSpacesInfo) > 0)
+
+                    @foreach ($profileSpacesInfo as $spaceInfo)
+                      <a href="#" class="space col-xs-6 col-sm-4 col-md-6 col-lg-12 navitem" data-col2-id="/aj/space/list" data-col3-id="/space/{{$spaceInfo->id}}">
+
+                        <div class="icon {{ $classArrayNames[$spaceInfo->typeId] }} ">
+                          <i class="{{ $spaceIconClassArray[$spaceInfo->typeId] }}"></i>
+                        </div>
+
+                        <span class="spacename">{!! str_limit($spaceInfo->spaceName, $limit = 20, $end = '...') !!}</span>
+                      </a>
+                    @endforeach
+
+                  @else
+
+                    @if ($isMyProfile) 
+                      <a href="#" class="space col-xs-6 col-sm-4 col-md-6 col-lg-12 col3Loader" data-url="/space/create">
+                        <div class="icon six">
+                          <i class="fa fa-plus-circle"></i>
+                        </div>
+                        <span class="no-spacename" style="color:#babfc9;">click here to make one.</span>
+                      </a>
+                    @else
+                      <span class="nospace col-xs-6 col-sm-4 col-md-6 col-lg-12">
+                        <div class="icon six">
+                          <i class="fa fa-plus-circle"></i>
+                        </div>
+                        <span class="no-spacename" style="color:#babfc9;">{{ $profile->name }} has no spaces yet.</span>
                       </span>
-                    </div>
-<!--                     <div class="editimage">
-                      <a href="#">Edit you image</a>
-                    </div> -->
-                  </div>
+                    @endif
 
-                @endif
-
-              </div>
-
-
-              <div class="names">
-
-                @if ($profile->name)
-                  <span class="name">{{ $profile->name }}</span>
-                @endif
-                @if ($profile->title)
-                  <span class="title">{{ $profile->title}}</span>
-                @endif
-                @if ($profile->start_date)
-                  <span class="dept">{{ $profile->department }}</span>
-                @endif
-
-              </div>
-
-              <div class="act row">
-                <div class="stat col-xs-4">
-                  <div class="amount pos">
-                    <i class="fa fa-thumb-tack"></i>
-                    <span class="number">{{ count($amountPosted) }}</span>
-                  </div>
-                </div>
-                <div class="stat col-xs-4">
-                  <div class="amount fav">
-                    <i class="fa fa-star"></i>
-                    <span class="number">{{ count($likesReceived) }}</span>
-                  </div>
-                </div>
-                <div class="stat col-xs-4">
-                  <div class="amount comm">
-                    <i class="fa fa-commenting"></i>
-                    <span class="number">{{ $amountCommentsPosted }}</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="left col-sm-12 col-md-6">
-              <div class="about">
-
-                @if ($profile->email)
-                  <a href="mailto:{{$profile->email}}" class="link">
-                    <i class="fa fa-envelope"></i>
-                    <span class="info">{{$profile->email}}</span>
-                  </a>
-                @endif
-
-                <div class="clearfix"></div>
-
-                @if ($profile->social_twitter)
-                  <a href="{{ $profile->social_twitter  }}" target="_blank" class="link">
-                    <i class="fa fa-twitter"></i>
-                    <span class="info">{{ str_limit($profile->social_twitter, 23)  }}</span>
-                  </a>
-                @endif
-
-                <div class="clearfix"></div>
-
-                @if ($profile->social_website)
-                  <a href="https://{{ $profile->social_website  }}" target="_blank"  class="link">
-                    <i class="fa fa-dribbble"></i>
-                    <span class="info">{{ str_limit($profile->social_website, 23)  }}</span>
-                  </a>
-                @endif
-
-                <div class="clearfix"></div>
-
-                @if ($profile->social_instagram)
-                  <a href="{{ $profile->social_instagram  }}" target="_blank"  class="link">
-                    <i class="fa fa-instagram"></i>
-                    <span class="info">{{ str_limit($profile->social_instagram, 23)  }}</span>
-                  </a>
-                @endif
-
-                <div class="clearfix"></div>
-
-                @if ($profile->social_facebook)
-                  <a href="{{ $profile->social_facebook  }}" target="_blank"  class="link">
-                    <i class="fa fa-facebook"></i>
-                    <span class="info">{{ str_limit($profile->social_facebook, 23)  }}</span>
-                  </a>
-                @endif
-
-                <div class="clearfix"></div>
-
-                @if ($profile->social_linkedin)
-                  <a href="{{ $profile->social_linkedin  }}" target="_blank"  class="link">
-                    <i class="fa fa-linkedin"></i>
-                    <span class="info">{{ str_limit($profile->social_linkedin, 23)  }}</span>
-                  </a>
-                @endif
-
-                <div class="clearfix"></div>
-
-                @if ($profile->social_skype)
-                  <a href="#" class="link">
-                    <i class="fa fa-skype"></i>
-                    <span class="info">{{ str_limit($profile->social_skype, 23)  }}</span>
-                  </a>
-                @endif
-
-                <div class="buttons">
-                  @if ($profile->email && Auth::user()->id != $profile->id)
-                    <a href="mailto:{{$profile->email}}" >
-                      <button class="talk topbutton" type="button" name="button"><i class="fa fa-pencil"></i> Message</button>
-                    </a>
-                  @endif
-
-                  @if ($isMyProfile)
-                    <a href="#" class="col3Loader" data-url="/profile/update/{{$profile->id}}">
-                      <button class="edit topbutton" type="button" name="button"><i class="fa fa-edit"></i> Edit</button>
-                    </a>
                   @endif
 
                 </div>
               </div>
             </div>
-          </div><!-- basicinfo -->
+          @if (count($followedSpaces) > 0)
+            <div class="following col-xs-12 col-sm-12 col-md-6 col-lg-12">
+              <div class="followin">
+                <span class="title">Following</span>
+                <div class="followlist row">
 
-          <div class="information row">
-            <div class="aboutinfo col-xs-12 col-sm-12 col-md-12 col-lg-8">
-              <div class="row">
-                <div class="about col-xs-12 col-sm-12 col-md-6 col-lg-12">
-                  <div class="aboutin">
-                    <span class="title">Information</span>
-                    @if ($profile->biography && $profile->hobbies)
-                      @if ($profile->biography)
-                        <p>
-                          {{ $profile->biography}}
-                        </p> 
-                      @endif  
-                      @if ( $profile->hobbies)
-                        <p>
-                          Hobbies: {{ $profile->hobbies }}
-                        </p>
-                      @endif
-                    @else
-                    <p>
-                      We wish we knew more about @if ($isMyProfile) you @else {{$profile->name}}@endif.
-                    </p>
-                    @endif
-                  </div>
-                </div>
-                <div class="journeymaps col-xs-12 col-sm-12 col-md-6 col-lg-12">
-                  <div class="mapin">
-                    <span class="title">Journey Maps</span>
-                    <div class="maplist row">
-
-                    @if(count($usersJourneyMaps) > 0)
-
-                      @foreach ($usersJourneyMaps as $usersJourneyMap)
-
-                        <a href="#" class="map col-xs-6 col-sm-4 col-md-6 col-lg-4 navitem" data-col2-id="/journeymap/" data-col3-id="/journeymap/{{$usersJourneyMap->id}}">
-                          <span class="mapname">{{$usersJourneyMap->name}}</span>
-                          <i class="fa fa-map"></i>
-                        </a>
-
-                      @endforeach
-
-                    @else
-
-                      @if ($isMyProfile) 
-                        <a href="#" class="map col-xs-6 col-sm-4 col-md-6 col-lg-4 col3Loader" data-url="/journeymap/create">
-                          <span class="nojm">click here to make one.</span>
-                          <span class="mapname" style="border:none;margin-top:20px;"></span>
-                          <i class="fa fa-map" style="background:#ccc;"></i>
-                        </a>
-                      @else
-                        <span class="nomap col-xs-6 col-sm-4 col-md-6 col-lg-4">
-                          <span class="nojm">{{ $profile->name }} has no Journey Maps.</span>
-                          <span class="mapname" style="border:none;margin-top:20px;"></span>
-                          <i class="fa fa-map" style="background:#ccc;"></i>
-                        </span>
-                      @endif
-
-                    @endif
-
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div><!-- aboutinfo -->
-
-            <div class="actinfo col-xs-12 col-sm-12 col-md-12 col-lg-4">
-              <div class="row">
-                <div class="spaces col-xs-12 col-sm-12 col-md-6 col-lg-12">
-                  <div class="spacein">
-                  <span class="title">Spaces</span>
-                    <div class="spacelist row">
-
-                      @if (count($profileSpacesInfo) > 0)
-
-                        @foreach ($profileSpacesInfo as $spaceInfo)
-                          <a href="#" class="space col-xs-6 col-sm-4 col-md-6 col-lg-12 navitem" data-col2-id="/aj/space/list" data-col3-id="/space/{{$spaceInfo->id}}">
-
-                            <div class="icon {{ $classArrayNames[$spaceInfo->typeId] }} ">
-                              <i class="{{ $spaceIconClassArray[$spaceInfo->typeId] }}"></i>
-                            </div>
-
-                            <span class="spacename">{!! str_limit($spaceInfo->spaceName, $limit = 20, $end = '...') !!}</span>
-                          </a>
-                        @endforeach
-
-                      @else
-
-                        @if ($isMyProfile) 
-                          <a href="#" class="space col-xs-6 col-sm-4 col-md-6 col-lg-12 col3Loader" data-url="/space/create">
-                            <div class="icon six">
-                              <i class="fa fa-plus-circle"></i>
-                            </div>
-                            <span class="no-spacename" style="color:#babfc9;">click here to make one.</span>
-                          </a>
-                        @else
-                          <span class="nospace col-xs-6 col-sm-4 col-md-6 col-lg-12">
-                            <div class="icon six">
-                              <i class="fa fa-plus-circle"></i>
-                            </div>
-                            <span class="no-spacename" style="color:#babfc9;">{{ $profile->name }} has no spaces yet.</span>
-                          </span>
-                        @endif
-
-                      @endif
-
-                    </div>
-                  </div>
-                </div>
-              @if (count($followedSpaces) > 0)
-                <div class="following col-xs-12 col-sm-12 col-md-6 col-lg-12">
-                  <div class="followin">
-                    <span class="title">Following</span>
-                    <div class="followlist row">
-
-                      @foreach($followedSpaces as $fSp)
-                      <div class="spacefollowes">
-                        <a href="#" class="space col-xs-6 col-sm-4 col-md-6 col-lg-12 navitem" data-col2-id="/aj/space/list" data-col3-id="/space/{{$fSp->id}}">
-                          <div class="icon {{ $classArrayNames[$fSp->typeId] }} ">
-                            <i class="{{ $spaceIconClassArray[$fSp->typeId] }}"></i>
-                          </div>
-                          <span class="spacename">{!! str_limit($fSp->name, $limit = 20, $end = '...') !!}</span>
-                        </a>
-                        @endforeach
-
+                  @foreach($followedSpaces as $fSp)
+                  <div class="spacefollowes">
+                    <a href="#" class="space col-xs-6 col-sm-4 col-md-6 col-lg-12 navitem" data-col2-id="/aj/space/list" data-col3-id="/space/{{$fSp->id}}">
+                      <div class="icon {{ $classArrayNames[$fSp->typeId] }} ">
+                        <i class="{{ $spaceIconClassArray[$fSp->typeId] }}"></i>
                       </div>
-                    </div>
+                      <span class="spacename">{!! str_limit($fSp->name, $limit = 20, $end = '...') !!}</span>
+                    </a>
+                    @endforeach
+
                   </div>
                 </div>
-                @endif
               </div>
-            </div><!-- actinfo -->
-          </div><!-- row  -->
-          <div class="skills row">
+            </div>
+            @endif
+          </div>-->
+        </div><!-- actinfo -->
+      </div><!-- row  -->
 
-          </div><!-- skills -->
-        </div><!-- profile -->
-      </div><!-- content -->
-    </div><!-- contain -->
+      <div class="skills row">
+      </div><!-- skills -->
+    </div><!-- profile -->
+  </div><!-- content -->
+</div><!-- contain -->

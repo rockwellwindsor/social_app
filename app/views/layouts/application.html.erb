@@ -1,14 +1,16 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Social</title>
+    <title>B social</title>
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link rel="shortcut icon" href="/favicon-bee.png">
   </head>
 
-  <body>
+  <body class="<%= controller.controller_name %> <%= controller.controller_name %>-<%= controller.action_name %>">
+
     <span class="notice"><%= notice %></span>
     <span class="alert"><%= alert %></span>
 

@@ -3,8 +3,8 @@ class PagesController < ApplicationController
     before_action :set_user
 
     def profile
-        if @user
-            redirect_to root_path
+        if @user.id != nil
+            root_path
         else
             redirect_to new_user_session_path
         end
