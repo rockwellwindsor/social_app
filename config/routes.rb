@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  resources :settings
   resources :social_links
   resources :map_tiles_subscriptions
   resources :map_tiles

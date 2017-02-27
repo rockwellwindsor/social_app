@@ -4,7 +4,7 @@
     <div class="tophalf">
       <div class="topposition">
         <img src="/images/logo.jpg" alt="login-logo" class="loginlogo " />
-
+        <%= render 'layouts/alerts' %>
         <div class="field emailgroup group ">
           <%= f.email_field :email, autofocus: true, class: "input email" %>
           <span class="highlight"></span>
