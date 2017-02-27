@@ -5,7 +5,9 @@
         <div class="right col-sm-12 col-md-6">
 
           <div class="photo">
-              <div class="img hidden" style="background:url('')no-repeat center;background-size:cover;"></div>
+            <% if @user.avatar %>
+              <div class="img" style="background:url('')no-repeat center;background-size:cover;"></div>
+            <% else %>
               <div id="profile-photo">
                 <div class="nopic" alt="<%= @user.first_name %>">
                   <span class="letter">
@@ -13,6 +15,7 @@
                   </span>
                 </div>
               </div>
+            <% end %>
           </div>
 
           <div class="names">
@@ -70,7 +73,7 @@
                 <button class="talk topbutton" type="button" name="button"><i class="fa fa-pencil"></i> Message</button>
               </a>
 
-              <a href="#" class="col3Loader" data-url="/user/<%= @user.id %>/edit %>">
+              <a href="/users/edit" class="col3Loader" data-url="">
                 <button class="edit topbutton" type="button" name="button"><i class="fa fa-edit"></i>Edit</button>
               </a>
 

@@ -1,3 +1,10 @@
-.registrations {
+.registrations-new {
     overflow:hidden;
 }
+.registrations-edit {
+    padding: 50px;
+    .group {
+       margin-left:50px !important;
+    }
+}
+
